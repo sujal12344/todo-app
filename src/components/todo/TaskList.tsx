@@ -1,8 +1,8 @@
 import { Task } from '@/types/task'
 import { Star, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import TaskEditor from './TaskEditor'
+// import { useState } from 'react'
+// import TaskEditor from './TaskEditor'
 import { useTaskStore } from '@/store/taskStore'
 import { useUIStore } from '@/store/uiStore'
 
@@ -13,7 +13,7 @@ interface TaskListProps {
 }
 
 const TaskList = ({ tasks, onToggleComplete, onToggleImportant }: TaskListProps) => {
-  const { selectedTask, setSelectedTask } = useTaskStore()
+  const { setSelectedTask } = useTaskStore()
   const { isLayoutGrid } = useUIStore()
 
   if (tasks.length === 0) {

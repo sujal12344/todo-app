@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bell, Calendar, Plus, Star, X, Trash2, RotateCcw, Check, Square, NotebookPen } from 'lucide-react'
+import { Bell, Calendar, Plus, X, Trash2, RotateCcw, Check, NotebookPen } from 'lucide-react'
 import { Task } from '@/types/task'
 import { useTaskStore } from '@/store/taskStore'
 import DatePicker from 'react-datepicker'
@@ -20,11 +20,11 @@ const TaskEditor = ({ task, onClose }: TaskEditorProps) => {
   const [showReminder, setShowReminder] = useState(false)
   const [showNotes, setShowNotes] = useState(false)
   const [dueDate, setDueDate] = useState(task.dueDate ? new Date(task.dueDate) : null)
-  const [reminder, setReminder] = useState(task.reminder || '')
+  const [reminder] = useState(task.reminder || '')
   const [notes, setNotes] = useState(task.notes || '')
   const [steps, setSteps] = useState(task.steps || [])
   const [newStep, setNewStep] = useState('')
-  const { selectedTask, setSelectedTask } = useTaskStore()
+  // const { selectedTask, setSelectedTask } = useTaskStore()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

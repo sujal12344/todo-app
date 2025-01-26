@@ -1,12 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { Calendar, Star, Map, Plus, Info, Clipboard, NotebookPen, InfoIcon } from 'lucide-react'
+import Image from 'next/image'
+import { Calendar, Star, Map, Plus, Clipboard, NotebookPen } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useUIStore } from '@/store/uiStore'
-import Image from 'next/image'
 // import { useAuthStore } from '@/store/authStore'
-import { AiFillInfoCircle } from 'react-icons/ai'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { useTaskStore } from '@/store/taskStore'
 
@@ -29,14 +28,14 @@ const Sidebar = () => {
     { icon: NotebookPen , label: 'Assigned to me', href: '/assigned' },
   ]
 
-  const todayTasks = tasks.filter(task => {
-    const today = new Date().toISOString().split('T')[0]
-    return task.dueDate === today
-  })
+  // const todayTasks = tasks.filter(task => {
+  //   const today = new Date().toISOString().split('T')[0]
+  //   return task.dueDate === today
+  // })
 
-  const completedTodayTasks = todayTasks.filter(task => task.completed)
-  const totalTodayTasks = todayTasks.length
-  const completionPercentage = totalTodayTasks ? (completedTodayTasks.length / totalTodayTasks) * 100 : 0
+  // const completedTodayTasks = todayTasks.filter(task => task.completed)
+  // const totalTodayTasks = todayTasks.length
+  // const completionPercentage = totalTodayTasks ? (completedTodayTasks.length / totalTodayTasks) * 100 : 0
 
   return (
     <AnimatePresence mode="sync">
@@ -63,10 +62,12 @@ const Sidebar = () => {
               {/* User Profile Section */}
               <div className="flex items-center gap-4 mb-8 px-2">
                 <div className="relative w-24 h-24 rounded-full overflow-hidden">
-                  <img
-                    src="https://randomuser.me/api/portraits/men/1.jpg" // Add a placeholder image
+                  <Image
+                    src="https://randomuser.me/api/portraits/men/1.jpg"
                     alt="Profile"
-                    // fill
+                    fill
+                    // width={96}
+                    // height={96}
                     className="object-cover"
                   />
                 </div>

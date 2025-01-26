@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { X, Calendar, Bell, Star } from 'lucide-react'
 import { Task } from '@/types/task'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 interface AddTaskProps {
   onAdd: (task: Task) => void

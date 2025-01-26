@@ -1,16 +1,15 @@
 "use client"
 
-import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, Sen } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Layout from "@/components/layout/Layout";
 import "./globals.css";
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+  // SignInButton,
+  // SignedIn,
+  // SignedOut,
+  // UserButton,
 } from '@clerk/nextjs'
 
 // fonts and metadata

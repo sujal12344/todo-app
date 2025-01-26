@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { LayoutGrid, List, Menu, MenuIcon, Moon, MoonStar, Search, Sun } from 'lucide-react'
+import { LayoutGrid, List, Menu, MoonStar, Search, Sun } from 'lucide-react'
 import Image from 'next/image'
 // import { useAuthStore } from '@/store/authStore'
 import { sen } from '@/app/layout'

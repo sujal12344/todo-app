@@ -13,7 +13,7 @@ export default function Home() {
     if (!isSignedIn) {
       router.push('/sign-in')
     }
-  }, [isSignedIn])
+  }, [isSignedIn, router])
   return (
     <main>
       {isSignedIn ? <TodoApp /> : redirect("/sign-in")}

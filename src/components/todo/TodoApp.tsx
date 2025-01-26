@@ -1,14 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronDownIcon, Delete, Plus, Triangle } from 'lucide-react'
+import { Triangle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import AddTask from './AddTask'
+// import AddTask from './AddTask'
 import TaskList from './TaskList'
 import { useTaskStore } from '@/store/taskStore'
 import { usePathname } from 'next/navigation'
 import TaskEditor from './TaskEditor'
-import { Bell, RotateCcw, Calendar, X } from 'lucide-react'
+import { Bell, RotateCcw, Calendar } from 'lucide-react'
 import { Task } from '@/types/task'
 
 const TodoApp = () => {
@@ -43,20 +43,20 @@ const TodoApp = () => {
   }
 
   // Get page title based on current route
-  const getPageTitle = () => {
-    switch (pathname) {
-      case '/today':
-        return 'Today\'s Tasks'
-      case '/important':
-        return 'Important Tasks'
-      case '/planned':
-        return 'Planned Tasks'
-      case '/assigned':
-        return 'Assigned Tasks'
-      default:
-        return 'All Tasks'
-    }
-  }
+  // const getPageTitle = () => {
+  //   switch (pathname) {
+  //     case '/today':
+  //       return 'Today\'s Tasks'
+  //     case '/important':
+  //       return 'Important Tasks'
+  //     case '/planned':
+  //       return 'Planned Tasks'
+  //     case '/assigned':
+  //       return 'Assigned Tasks'
+  //     default:
+  //       return 'All Tasks'
+  //   }
+  // }
 
   return (
     <div className="relative">
@@ -136,7 +136,7 @@ const AddTask2 = ({ onAdd, onClose }: AddTaskProps) => {
   const [showReminder, setShowReminder] = useState(false)
   const [dueDate, setDueDate] = useState('')
   const [reminder, setReminder] = useState('')
-  const { deleteAllTasks } = useTaskStore()
+  // const { deleteAllTasks } = useTaskStore()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
