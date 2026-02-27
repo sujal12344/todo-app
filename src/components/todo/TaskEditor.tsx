@@ -202,7 +202,7 @@ const TaskEditor = ({ task, onClose }: TaskEditorProps) => {
                 >
                   <DatePicker
                     selected={dueDate}
-                    onChange={(date) => setDueDate(date)}
+                    onChange={(date: Date | null) => setDueDate(date)}
                     inline
                     calendarClassName="bg-white dark:bg-[#232323] border dark:border-gray-700 rounded-lg"
                   />

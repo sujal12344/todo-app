@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
-import { useUIStore } from '@/store/uiStore'
-import { motion } from 'framer-motion'
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import { useUIStore } from "@/store/uiStore";
+import { motion } from "framer-motion";
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const { isSidebarOpen } = useUIStore()
+  const { isSidebarOpen } = useUIStore();
 
   return (
     <div className="bg-background">
@@ -20,16 +20,14 @@ const Layout = ({ children }: LayoutProps) => {
         initial={false}
         animate={{
           paddingLeft: isSidebarOpen ? "19rem" : "1rem",
-          transition: { duration: 0.4, type: "spring", bounce: 0 }
+          transition: { duration: 0.4, type: "spring", bounce: 0 },
         }}
         className="pt-16"
       >
-        <div className="p-4">
-          {children}
-        </div>
+        <div className="p-4">{children}</div>
       </motion.main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
